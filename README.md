@@ -311,7 +311,7 @@ CloudFront delivers the frontend from a private S3 origin.
 
 The upload-permission Lambda provides the Function URL used by the frontend.
 
-![Upload Lambda](screenshots/06-upload-lambda.png)
+![Upload Lambda](screenshots/GenerateImage.png)
 
 ### Processor Trigger
 
