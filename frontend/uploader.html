@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A serverless image uploader built with AWS Lambda and Amazon S3.">
+  <title>Image Uploader | Tahir Alakbarli</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="uploader.css">
+  <script src="uploader.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Return to the homepage">TA</a>
+    <nav aria-label="Main navigation">
+      <a href="index.html#about">About</a>
+      <a href="index.html#architecture">Architecture</a>
+      <a href="index.html#features">Features</a>
+      <a href="uploader.html" aria-current="page">Image Uploader</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="uploader-hero">
+      <div class="section-heading">
+        <p class="eyebrow">SERVERLESS EXTENSION</p>
+        <h1>Upload an image securely.</h1>
+        <p class="hero-text">
+          Choose a JPG, PNG, or WebP image. The browser requests temporary upload
+          permission from AWS Lambda, then sends the file directly to a private S3 bucket.
+        </p>
+      </div>
+
+      <section class="upload-card" aria-labelledby="upload-title">
+        <div class="upload-card-heading">
+          <div>
+            <p class="eyebrow">IMAGE UPLOAD</p>
+            <h2 id="upload-title">Select a file</h2>
+          </div>
+          <span class="secure-badge">PRIVATE S3</span>
+        </div>
+
+        <label class="drop-zone" for="image-input" id="drop-zone">
+          <span class="upload-icon" aria-hidden="true">IMG</span>
+          <strong>Choose an image</strong>
+          <span>JPG, PNG, or WebP - maximum 5 MB</span>
+          <input id="image-input" type="file" accept="image/jpeg,image/png,image/webp">
+        </label>
+
+        <div class="preview-panel" id="preview-panel" hidden>
+          <img id="image-preview" alt="Preview of the selected image">
+          <div class="file-details">
+            <strong id="file-name"></strong>
+            <span id="file-size"></span>
+          </div>
+        </div>
+
+        <button class="button primary upload-button" id="upload-button" type="button" disabled>
+          Upload to AWS
+        </button>
+
+        <div class="upload-status" id="upload-status" role="status" aria-live="polite"></div>
+      </section>
+    </section>
+
+    <section class="section process-section">
+      <div class="section-heading">
+        <p class="eyebrow">WHAT HAPPENS NEXT</p>
+        <h2>A small event-driven workflow</h2>
+      </div>
+      <div class="process-grid">
+        <article>
+          <span>1</span>
+          <h3>Temporary permission</h3>
+          <p>Lambda returns a presigned form that is valid for two minutes.</p>
+        </article>
+        <article>
+          <span>2</span>
+          <h3>Direct upload</h3>
+          <p>The browser sends the image directly to the private uploads bucket.</p>
+        </article>
+        <article>
+          <span>3</span>
+          <h3>Automatic organization</h3>
+          <p>An S3 event triggers Lambda to copy the file into processed/ and create a JSON receipt.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Tahir Alakbarli</p>
+    <p>Serverless upload extension deployed on AWS</p>
+  </footer>
+</body>
+</html>

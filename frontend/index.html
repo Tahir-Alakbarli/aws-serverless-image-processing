@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tahir Alakbarli's secure AWS static website project using S3, CloudFront, Route 53, and ACM.">
+  <title>Tahir Alakbarli | AWS Cloud Project</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Go to the top">TA</a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#features">Features</a>
+      <a href="uploader.html">Image Uploader</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">AWS CLOUD PORTFOLIO PROJECT</p>
+        <h1>Secure static website delivered globally.</h1>
+        <p class="hero-text">
+          Built with Amazon S3, CloudFront, Route 53, and AWS Certificate Manager.
+          The website is fast, uses HTTPS, and keeps its storage bucket private.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#architecture">View architecture</a>
+          <!-- Replace your-username below with your real GitHub username. -->
+          <a class="button secondary" href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">GitHub profile</a>
+        </div>
+      </div>
+
+      <aside class="status-card" aria-label="Project status">
+        <span class="status"><span class="status-dot"></span> LIVE ON AWS</span>
+        <dl>
+          <div><dt>Origin</dt><dd>Private S3</dd></div>
+          <div><dt>Delivery</dt><dd>CloudFront CDN</dd></div>
+          <div><dt>DNS</dt><dd>Route 53</dd></div>
+          <div><dt>Security</dt><dd>HTTPS + OAC</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">ABOUT THE PROJECT</p>
+        <h2>Small project, real cloud concepts.</h2>
+      </div>
+      <p class="section-intro">
+        I created this project to demonstrate static web hosting, content delivery,
+        DNS configuration, TLS certificates, and secure access between AWS services.
+      </p>
+    </section>
+
+    <section id="architecture" class="section architecture-section">
+      <div class="section-heading">
+        <p class="eyebrow">REQUEST FLOW</p>
+        <h2>How the website reaches the browser</h2>
+      </div>
+
+      <div class="architecture" aria-label="AWS website architecture">
+        <article class="service-card">
+          <span class="service-number">1</span>
+          <div class="service-icon blue">WEB</div>
+          <h3>Visitor</h3>
+          <p>Opens the custom domain in a browser.</p>
+        </article>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+        <article class="service-card">
+          <span class="service-number">2</span>
+          <div class="service-icon purple">DNS</div>
+          <h3>Route 53</h3>
+          <p>Points the domain to CloudFront.</p>
+        </article>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+        <article class="service-card">
+          <span class="service-number">3</span>
+          <div class="service-icon orange">CDN</div>
+          <h3>CloudFront</h3>
+          <p>Handles HTTPS and serves cached files.</p>
+        </article>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+        <article class="service-card">
+          <span class="service-number">4</span>
+          <div class="service-icon green">S3</div>
+          <h3>Amazon S3</h3>
+          <p>Stores the website in a private bucket.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">DESIGN CHOICES</p>
+        <h2>What this deployment demonstrates</h2>
+      </div>
+      <div class="feature-grid">
+        <article>
+          <h3>Private origin</h3>
+          <p>S3 Block Public Access remains enabled. CloudFront reads objects through Origin Access Control.</p>
+        </article>
+        <article>
+          <h3>Global delivery</h3>
+          <p>CloudFront caches content at edge locations, reducing repeated requests to the origin.</p>
+        </article>
+        <article>
+          <h3>Custom HTTPS domain</h3>
+          <p>Route 53 handles DNS while AWS Certificate Manager provides the TLS certificate.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Tahir Alakbarli</p>
+    <p>Deployed on AWS</p>
+  </footer>
+</body>
+</html>
