@@ -11,7 +11,7 @@ For this project, I kept the same website design and content instead of creating
 - Website: https://d35y0uicyto1o4.cloudfront.net/
 - Image uploader: https://d35y0uicyto1o4.cloudfront.net/uploader.html
 
-The live AWS resources may be disabled outside demonstration periods to avoid unnecessary usage.
+The live AWS resources will be disabled outside demonstration periods to avoid unnecessary usage and costs to me.
 
 ## Project Goal
 
