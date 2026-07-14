@@ -32,7 +32,7 @@ This project demonstrates how a static frontend can communicate with serverless 
 
 ## Architecture
 
-![AWS Serverless Image Uploader Architecture](docs/architecture.png)
+![AWS Serverless Image Uploader Architecture](docs/AWS.png)
 
 The application uses two separate S3 buckets.
 
