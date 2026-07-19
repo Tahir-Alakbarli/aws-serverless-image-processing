@@ -1,6 +1,6 @@
 # AWS Serverless Image Uploader
 
-This project is an updated version of my previous AWS S3 static website projec
+This project is an updated version of my previous AWS S3 static website project.
 
 In the original project, I created a static website using HTML, CSS and JavaScript, stored the website files in a private Amazon S3 bucket and delivered the website through Amazon CloudFront.
 
